@@ -3,7 +3,24 @@ defmodule Conn.Router do
   require Logger
 
   plug(:match)
+  plug Plug.Parsers, parsers: [:json], json_decoder: Jason
   plug(:dispatch)
+
+  post "/connect" do
+    case conn.body_params do
+      %{"username" => user, "password" => pass} ->
+        case Conn.Client.login(user, pass) do
+          {:ok, _} ->
+            send_resp(conn, 200, Jason.encode!(%{response: "connected"}))
+
+          {:error, reason} ->
+            send_resp(conn, 500, Jason.encode!(%{response: "failed to connect", reason: inspect(reason)}))
+        end
+
+      _ ->
+        send_resp(conn, 400, Jason.encode!(%{error: "Неправильные параметыр"}))
+    end
+  end
 
   post "/ping" do
     case Conn.Client.ping() do

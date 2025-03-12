@@ -1,0 +1,5 @@
+%{
+  "ex_ami": {:hex, :ex_ami, "0.3.3", "02cd4cdd3312c83c5317ed6dde037c9629bb5c985a9766482f29697e6dfc95b0", [:mix], [{:gen_state_machine, "~> 2.0", [hex: :gen_state_machine, repo: "hexpm", optional: false]}, {:gen_state_machine_helpers, "~> 0.1", [hex: :gen_state_machine_helpers, repo: "hexpm", optional: false]}], "hexpm", "cb6f459a6ead068e2cf5ce629065cc26eb8436ccf179bdf3b29991760843d9c9"},
+  "gen_state_machine": {:hex, :gen_state_machine, "2.1.0", "a38b0e53fad812d29ec149f0d354da5d1bc0d7222c3711f3a0bd5aa608b42992", [:mix], [], "hexpm", "ae367038808db25cee2f2c4b8d0531522ea587c4995eb6f96ee73410a60fa06b"},
+  "gen_state_machine_helpers": {:hex, :gen_state_machine_helpers, "0.1.0", "d6cd29d6b0a5ffeacd6e6d007733231916c228f2a0f758ff93d5361656a22133", [:mix], [], "hexpm", "600842df71175d9b5133f327c410b36847cfc3b83bedf07c844f43c07363bc31"},
+}
